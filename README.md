@@ -1,5 +1,14 @@
 # hintnote
-Unity3d 5.5 UI Test
+Unity3D 5.5 UI Test
+
+### やりたいこと
+<pre>
+ヒント的なキーワードを入力(保存)するだけで、インターネットから関連情報を引っ張ってきます。
+※要するに、毎回検索ワードを入力する手間を省くだけのものです。
+
+ある程度カテゴリを分けたら管理しやすいかなと思います。
+カテゴリ毎に外部API(Google、Wikipedia、Weblio、etc)を指定できるようにしたいと思います。
+</pre>
 
 <img src="http://i.imgur.com/0ARI6my.png" alt="" title="">
 ### フォルダ構成
