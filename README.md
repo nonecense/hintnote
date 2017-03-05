@@ -8,6 +8,8 @@ Unity3D 5.5 UI Test
 
 ある程度カテゴリを分けたら管理しやすいかなと思います。
 カテゴリ毎に外部API(Google、Wikipedia、Weblio、etc)を指定できるようにしたいと思います。
+
+TODO 運営が提供するマスターキーワードとユーザが登録変更したキーワードの共存方法
 </pre>
 
 <img src="http://i.imgur.com/0ARI6my.png" alt="" title=""><br>
