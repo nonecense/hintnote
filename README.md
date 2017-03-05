@@ -27,8 +27,8 @@ Assets/
 
 #### App/Script/Controller/
 <pre>
-１シーン毎にサブフォルダを用意
+１シーン毎にサブフォルダを用意、
 UI関連(Homeシーン)は、１シーンで複数のパネルを入れ替えるようになっているので
-Controllerのサブフォルダ下にPanel毎に{PanelName}Conroller.csが用意されてある
+Controllerのサブフォルダ下にPanel毎に{PanelName}Conroller.csが用意されてあります。
 </pre>
 
