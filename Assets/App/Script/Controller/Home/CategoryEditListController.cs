@@ -13,7 +13,7 @@ namespace Presto.Controller.Home
     public class CategoryEditListController : Presto.Controller.Home.BaseController
     {
         public Text TextCategoryName;
-        public static GameObject[] menuObjs = new GameObject[100];
+        public static GameObject[] MenuObjArr = new GameObject[BaseController.ITEM_COUNT_MAX];
         public static JSONNode Data = null;
 
         public override void Awake()
@@ -24,9 +24,9 @@ namespace Presto.Controller.Home
 
         public void RefreshPanel(JSONNode json_node)
         {
-            for (int i = 0; i < 100; i++)
+            foreach (var data in CategoryEditListController.MenuObjArr.Select((val, i) => new { val, i }))
             {
-                Destroy(CategoryEditListController.menuObjs[i]);
+                Destroy(CategoryEditListController.MenuObjArr[data.i]);
             }
 
             CategoryEditListController.Data = json_node;
@@ -37,9 +37,9 @@ namespace Presto.Controller.Home
 
             foreach (var data in CategoryEditListController.Data.Children.Select((val,key)=>new { val, key}))
             {
-                CategoryEditListController.menuObjs[data.key] = Instantiate(Resources.Load("Prefab/UI/Keyword/CategoryEditField") as GameObject);
-                CategoryEditListController.menuObjs[data.key].transform.SetParent(this._PanelContent.transform, false);
-                CategoryEditListController.menuObjs[data.key].GetComponent<CategoryEditField>().SetData(data.val);
+                CategoryEditListController.MenuObjArr[data.key] = Instantiate(Resources.Load("Prefab/UI/Keyword/CategoryEditField") as GameObject);
+                CategoryEditListController.MenuObjArr[data.key].transform.SetParent(this._PanelContent.transform, false);
+                CategoryEditListController.MenuObjArr[data.key].GetComponent<CategoryEditField>().SetData(data.val);
             }
         }
 
@@ -60,11 +60,11 @@ namespace Presto.Controller.Home
             foreach(var data in CategoryEditListController.Data.Children.Select((val, key) => new { val, key }))
             {
                 // TODO
-                string edit_txt = CategoryEditListController.menuObjs[data.key].GetComponent<CategoryEditField>().InputfieldTitle.text;
+                string edit_txt = CategoryEditListController.MenuObjArr[data.key].GetComponent<CategoryEditField>().InputfieldTitle.text;
                 if ( ! Presto.Module.Utility.String.Equal(data.val["title"], edit_txt))
                 {
                     // CategoryEditListController.menuObjs[i]
-                    Debug.Log(data.key + ":::不一致。。。。。" + CategoryEditListController.menuObjs[data.key].GetComponent<CategoryEditField>().InputfieldTitle.text);
+                    Debug.Log(data.key + ":::不一致。。。。。" + CategoryEditListController.MenuObjArr[data.key].GetComponent<CategoryEditField>().InputfieldTitle.text);
                 }
             }
 

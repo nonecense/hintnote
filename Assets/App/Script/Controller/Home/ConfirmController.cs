@@ -13,6 +13,10 @@ namespace Presto.Controller.Home
     {
         public Text TextConfirmMsg;
 
+        // コード定義
+        public const int CODE_ERR = -1;         // 不明エラー                // TODO 未使用 -1~-1000番台
+        public const int CODE_NEW_MASTER = 1;   // 新しいマスターデータあり   // TODO 未使用
+
         // カテゴリ系操作
         public const int OK_ACTION_CATEGORY_SAVE   = 10001;
         public const int OK_ACTION_CATEGORY_DELETE = 10002;

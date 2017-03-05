@@ -21,18 +21,14 @@ namespace Presto.Controller.Home
         // 全パネル一覧
         public static Dictionary<string, GameObject> Panels = new Dictionary<string ,GameObject>();
 
+        // タグ名で任意パネルを取得
         public static GameObject GetPanelWithTag(string tag_name)
         {
-            if (BaseController.Panels[tag_name])
+            if (!BaseController.Panels[tag_name])
             {
-                return BaseController.Panels[tag_name];
+                BaseController.Panels[tag_name] = GameObject.FindWithTag(tag_name);
             }
-            else
-            {
-                GameObject obj = GameObject.FindWithTag(tag_name);
-                BaseController.Panels[tag_name] = obj;
-                return obj;
-            }
+            return BaseController.Panels[tag_name];
         }
 
         public virtual void Awake()
