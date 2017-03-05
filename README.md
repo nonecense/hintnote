@@ -10,7 +10,8 @@ Unity3D 5.5 UI Test
 カテゴリ毎に外部API(Google、Wikipedia、Weblio、etc)を指定できるようにしたいと思います。
 </pre>
 
-<img src="http://i.imgur.com/0ARI6my.png" alt="" title="">
+<img src="http://i.imgur.com/0ARI6my.png" alt="" title=""><br>
+<img src="http://i.imgur.com/L2vo5MY.png" alt="" title="">
 ### フォルダ構成
 <pre>
 Assets/
