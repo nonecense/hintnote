@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a9df756161d48b649a35564642204507
+timeCreated: 1486182428
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: WebHostingHub-Glyphs
+  fontNames:
+  - WebHostingHub-Glyphs
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
