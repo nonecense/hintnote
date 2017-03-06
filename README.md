@@ -1,5 +1,7 @@
 # hintnote
-Unity3D 5.5 UI Test
+Unity3D 5.5 UI Sample
+<img src="http://i.imgur.com/0ARI6my.png" alt="" title=""><br>
+<img src="http://i.imgur.com/L2vo5MY.png" alt="" title="">
 
 ### やりたいこと
 <pre>
@@ -12,8 +14,7 @@ Unity3D 5.5 UI Test
 TODO 運営が提供するマスターキーワードとユーザが登録変更したキーワードの共存方法
 </pre>
 
-<img src="http://i.imgur.com/0ARI6my.png" alt="" title=""><br>
-<img src="http://i.imgur.com/L2vo5MY.png" alt="" title="">
+
 ### フォルダ構成
 <pre>
 Assets/
