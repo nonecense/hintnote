@@ -52,7 +52,7 @@ namespace Presto.UI
             else if(this.MenuData.Count > 0)
             {
                 // サブメニューの表示
-                BaseController.GetPanelWithTag("HomeController").GetComponent<HomeController>().RefreshPanel(Presto.Module.Utility.Cache.LoadSubCategory(this.MenuData));
+                BaseController.GetPanelWithTag("PanelHome").GetComponent<HomeController>().RefreshPanel(Presto.Module.Utility.Cache.LoadSubCategory(this.MenuData));
             }
         }
 

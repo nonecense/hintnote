@@ -28,15 +28,15 @@ namespace Presto.Controller.Home
         }
 
         // 
-        void CallbackAPI(JSONNode top_node)
+        void CallbackAPI(JSONNode json_node)
         {
-            this.RefreshPanel(top_node.Children.First().Children.First());
+            this.RefreshPanel(json_node.Children.First().Children.First());
         }
 
         // 
         public void LoadMasterData(string parametors="")
         {
-            // StartCoroutine(Presto.Module.Server.CallAPI.Get("http://presto:8080/app/dict/top/category/", CallbackAPI));
+            //StartCoroutine(Presto.Module.Server.CallAPI.Get("http://presto:8080/app/dict/top/category/", CallbackAPI));
             this.RefreshPanel(Cache.LoadCategory());
         }
 
@@ -59,7 +59,14 @@ namespace Presto.Controller.Home
             HomeController.treeData[HomeController.currentLevel] = HomeController.MenuNode;
 
             // 戻るボタンの表示
-            this.FooterUpperButton.SetActive((HomeController.currentLevel > 0));
+            if (HomeController.currentLevel > 0)
+            {
+                this.FooterUpperButton.GetComponent<ToggleDisplay>().Show();
+            }else
+            {
+                this.FooterUpperButton.GetComponent<ToggleDisplay>().Hide();
+            }
+                
 
             // メニュー一覧の作成
             foreach (var data in HomeController.MenuNode.Children.Select((val, i)=> new { val, i }))

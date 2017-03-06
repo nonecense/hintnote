@@ -16,9 +16,9 @@ namespace Presto.UI
         public int id = 1;
         public JSONNode Data;
 
-        public void SetData(JSONNode _data)
+        public void SetData(JSONNode json_node)
         {
-            this.Data = _data;
+            this.Data = json_node;
             this.id = this.Data["id"].AsInt;
             this.TextTitle.text = this.Data["title"];
             this.TextDesc.text = this.Data["desc"];
@@ -41,7 +41,7 @@ namespace Presto.UI
         public void ShowKeywordDetail(string html)
         {
             int displayIndex = gameObject.transform.GetSiblingIndex();
-            BaseController.GetPanelWithTag("KeywordListController").GetComponent<KeywordListController>().RefreshPanel(displayIndex, html);
+            BaseController.GetPanelWithTag("PanelKeywordList").GetComponent<KeywordListController>().RefreshPanel(displayIndex, html);
         }
 
     }

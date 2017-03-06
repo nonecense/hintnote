@@ -7,8 +7,7 @@ using System.Linq;
 
 namespace Presto.Controller.Home
 {
-    [RequireComponent(typeof(Canvas))]
-    public class BaseController : MonoBehaviour
+    public class BaseController : Presto.Controller.BaseController
     {
         // 最大表示アイテム数
         public static readonly int ITEM_COUNT_MAX = 100;
