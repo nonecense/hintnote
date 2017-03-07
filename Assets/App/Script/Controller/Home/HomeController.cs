@@ -51,6 +51,8 @@ namespace Presto.Controller.Home
 
             if(json_node == null)
             {
+                HomeController.currentLevel++;
+                Debug.Log(".......not data.......currentLevel:" + HomeController.currentLevel);
                 return;
             }
 
@@ -58,15 +60,16 @@ namespace Presto.Controller.Home
             HomeController.MenuNode = json_node;
             HomeController.treeData[HomeController.currentLevel] = HomeController.MenuNode;
 
-            // 戻るボタンの表示
             if (HomeController.currentLevel > 0)
             {
-                this.FooterUpperButton.GetComponent<ToggleDisplay>().Show();
-            }else
-            {
-                this.FooterUpperButton.GetComponent<ToggleDisplay>().Hide();
+                this._PanelContent.transform.FindChild("ImageEmpty").gameObject.SetActive(true);   // 空のメニュー
+                this.FooterUpperButton.GetComponent<ToggleDisplay>().Show();    // 戻るボタン
             }
-                
+            else
+            {
+                this._PanelContent.transform.FindChild("ImageEmpty").gameObject.SetActive(false);   // 空のメニュー
+                this.FooterUpperButton.GetComponent<ToggleDisplay>().Hide();    // 戻るボタン
+            }
 
             // メニュー一覧の作成
             foreach (var data in HomeController.MenuNode.Children.Select((val, i)=> new { val, i }))
@@ -116,8 +119,10 @@ namespace Presto.Controller.Home
         }
 
         // 編集ボタン
-        public void ShowListEdit()
+        public void ShowCategoryListEdit()
         {
+            Debug.Log("show category edit");
+            BaseController.GetPanelWithTag("PanelCategoryEditList").GetComponent<TogglePanelPosition>().Show();
             BaseController.GetPanelWithTag("PanelCategoryEditList").GetComponent<CategoryEditListController>().RefreshPanel(HomeController.MenuNode);
         }
 

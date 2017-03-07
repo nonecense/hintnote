@@ -98,6 +98,7 @@
     <Compile Include="Assets\App\Script\Controller\Home\HomeController.cs" />
     <Compile Include="Assets\App\Script\Controller\Home\KeywordEditListController.cs" />
     <Compile Include="Assets\App\Script\Controller\Home\KeywordListController.cs" />
+    <Compile Include="Assets\App\Script\Controller\Home\WebViewController.cs" />
     <Compile Include="Assets\App\Script\Entity\BaseEntity.cs" />
     <Compile Include="Assets\App\Script\Entity\UI\WordDetailEntity.cs" />
     <Compile Include="Assets\App\Script\Module\Server\CallAPI.cs" />

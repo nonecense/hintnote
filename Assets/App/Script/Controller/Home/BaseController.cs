@@ -23,7 +23,7 @@ namespace Presto.Controller.Home
         // タグ名で任意パネルを取得
         public static GameObject GetPanelWithTag(string tag_name)
         {
-            if (!BaseController.Panels.ContainsKey(tag_name))
+            if (!BaseController.Panels.ContainsKey(tag_name) || !BaseController.Panels[tag_name])
             {
                 BaseController.Panels[tag_name] = GameObject.FindWithTag(tag_name);
             }
@@ -44,6 +44,7 @@ namespace Presto.Controller.Home
                     { "PanelCategoryEditList", GameObject.FindWithTag("PanelCategoryEditList") },
                     { "PanelKeywordList", GameObject.FindWithTag("PanelKeywordList") },
                     { "PanelKeywordEditList", GameObject.FindWithTag("PanelKeywordEditList") },
+                    { "PanelWebView", GameObject.FindWithTag("PanelWebView") },
                     { "PanelConfirm", GameObject.FindWithTag("PanelConfirm") },
                     { "PanelUserProfile", GameObject.FindWithTag("PanelUserProfile") },
                     { "PanelSetting", GameObject.FindWithTag("PanelSetting") },

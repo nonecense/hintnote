@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using SimpleJSON;
 using Presto.Controller.Home;
+using Presto.Module.Utility;
 
 namespace Presto.UI
 {
@@ -25,7 +26,6 @@ namespace Presto.UI
         }
 
 
-
         // TODO
         public void OnClickAction()
         {
@@ -35,14 +35,22 @@ namespace Presto.UI
 
         void CallbackAPI(string html)
         {
-            this.ShowKeywordDetail(html);
+            // this.ShowKeywordDetail(html);    // TODO 使わない
+            this.ShowWebview(html);
         }
 
+        public void ShowWebview(string html)
+        {
+            html = html.Substring(0,5000);
+            BaseController.GetPanelWithTag("PanelWebView").GetComponent<TogglePanelPosition>().Show();
+            BaseController.GetPanelWithTag("PanelWebView").GetComponent<WebViewController>().RefreshPanel(html);
+        }
+
+        // TODO 使わない
         public void ShowKeywordDetail(string html)
         {
             int displayIndex = gameObject.transform.GetSiblingIndex();
             BaseController.GetPanelWithTag("PanelKeywordList").GetComponent<KeywordListController>().RefreshPanel(displayIndex, html);
         }
-
     }
 }
