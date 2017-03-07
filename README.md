@@ -39,16 +39,15 @@ Controllerのサブフォルダ配下には、パネル毎に{PanelName}Conrolle
 </pre>
 
 ### キャッシュファイルについて
-<pre>
 - SimpleJson形式でキャッシュしています。
 - カテゴリは全部10階層までサブフォルダを作成することが可能です。
 
 
+<pre>
 例）
 トップページに表示するカテゴリ一覧
 - Assets/App/Datas/Cache/hintnote/master/categories/category.txt
 
 トップページの２番目をクリックした際表示するカテゴリ一覧
 - Assets/App/Datas/Cache/hintnote/master/categories/2/category.txt
-
 </pre>
