@@ -32,10 +32,19 @@ Assets/
  Plugins/                 ※SimpleJson等Pluginの保管場所
 </pre>
 
-#### App/Script/Controller/
+##### App/Script/Controller/
 <pre>
-１シーン毎にサブフォルダを用意、
-UI関連(Homeシーン)は、１シーンで複数のパネルを入れ替えるようになっているので
-Controllerのサブフォルダ下にPanel毎に{PanelName}Conroller.csが用意されてあります。
+１シーン毎にサブフォルダを用意し、１シーンで複数のパネルをカメラ視角へ切替することで画面の切替をおこなっています。
+Controllerのサブフォルダ配下には、パネル毎に{PanelName}Conroller.csを用意しています。
 </pre>
 
+### キャッシュファイルについて
+<pre>
+- SimpleJson形式でキャッシュしています。
+- カテゴリは全部10階層までサブフォルダを作成することが可能です。
+例）
+- Assets/App/Datas/Cache/hintnote/master/categories/category.txt
+  トップページに表示するカテゴリ一覧
+- Assets/App/Datas/Cache/hintnote/master/categories/2/category.txt
+  トップページの２番目をクリックした際表示するカテゴリ一覧
+</pre>
