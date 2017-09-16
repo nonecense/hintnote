@@ -36,8 +36,8 @@ namespace Presto.Controller.Home
         // 
         public void LoadMasterData(string parametors="")
         {
-            //StartCoroutine(Presto.Module.Server.CallAPI.Get("http://presto:8080/app/dict/top/category/", CallbackAPI));
-            this.RefreshPanel(Cache.LoadCategory());
+            StartCoroutine(Presto.Module.Server.CallAPI.Get("http://presto:8080/app/hintnote/top/category/", CallbackAPI));
+            //this.RefreshPanel(Cache.LoadCategory());
         }
 
         // 画面再表示
@@ -62,12 +62,12 @@ namespace Presto.Controller.Home
 
             if (HomeController.currentLevel > 0)
             {
-                this._PanelContent.transform.FindChild("ImageEmpty").gameObject.SetActive(true);   // 空のメニュー
+                this._PanelContent.transform.Find("ImageEmpty").gameObject.SetActive(true);   // 空のメニュー
                 this.FooterUpperButton.GetComponent<ToggleDisplay>().Show();    // 戻るボタン
             }
             else
             {
-                this._PanelContent.transform.FindChild("ImageEmpty").gameObject.SetActive(false);   // 空のメニュー
+                this._PanelContent.transform.Find("ImageEmpty").gameObject.SetActive(false);   // 空のメニュー
                 this.FooterUpperButton.GetComponent<ToggleDisplay>().Hide();    // 戻るボタン
             }
 
@@ -83,7 +83,7 @@ namespace Presto.Controller.Home
         // Homeボタン
         public void OnClickHomeButton(Toggle t)
         {
-            this.RefreshPanel(Cache.LoadCategory());
+            this.RefreshPanel(Presto.Module.Utility.Cache.LoadCategory());
 
             foreach (var i in BaseController.Panels.Keys)
             {
@@ -92,10 +92,6 @@ namespace Presto.Controller.Home
                     float __x = BaseController.Panels[i].GetComponent<TogglePanelPosition>().x;
                     float __y = BaseController.Panels[i].GetComponent<TogglePanelPosition>().y;
                     BaseController.Panels[i].GetComponent<RectTransform>().localPosition = new Vector3(__x, __y, 0);
-                    if (BaseController.Panels[i].name != "PanelHome")
-                    {
-                        BaseController.Panels[i].SetActive(false);
-                    }
                 }
             }
         }
@@ -103,7 +99,7 @@ namespace Presto.Controller.Home
         // リロードボタン
         public void OnClickReload(Toggle t)
         {
-            this.RefreshPanel(Cache.LoadCategory());
+            this.RefreshPanel(Presto.Module.Utility.Cache.LoadCategory());
         }
 
         // 親フォルダの表示

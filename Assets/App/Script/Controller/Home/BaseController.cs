@@ -32,9 +32,9 @@ namespace Presto.Controller.Home
 
         public virtual void Awake()
         {
-            this._PanelHeader = gameObject.transform.FindChild("PanelHeader") ? gameObject.transform.FindChild("PanelHeader").gameObject : null;
-            this._PanelFooter = gameObject.transform.FindChild("PanelFooter") ? gameObject.transform.FindChild("PanelFooter").gameObject : null;
-            this._PanelContent = gameObject.transform.FindChild("PanelContent").gameObject;
+            this._PanelHeader = gameObject.transform.Find("PanelHeader") ? gameObject.transform.Find("PanelHeader").gameObject : null;
+            this._PanelFooter = gameObject.transform.Find("PanelFooter") ? gameObject.transform.Find("PanelFooter").gameObject : null;
+            this._PanelContent = gameObject.transform.Find("PanelContent").gameObject;
 
             if(BaseController.Panels.Count == 0)
             {

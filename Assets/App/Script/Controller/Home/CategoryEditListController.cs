@@ -68,7 +68,7 @@ namespace Presto.Controller.Home
                 }
             }
 
-            Cache.SaveCategory(CategoryEditListController.Data);    // キャッシュデータの更新
+            Presto.Module.Utility.Cache.SaveCategory(CategoryEditListController.Data);    // キャッシュデータの更新
 
             gameObject.GetComponent<TogglePanelPosition>().Handle();    // 編集パネルを閉じる
             BaseController.GetPanelWithTag("PanelHome").GetComponent<HomeController>().RefreshPanel(CategoryEditListController.Data);    // TODO カテゴリ一覧を更新

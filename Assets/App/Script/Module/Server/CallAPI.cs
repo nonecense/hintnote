@@ -38,7 +38,7 @@ namespace Presto.Module.Server
             Debug.Log("#######response text:" + request.downloadHandler.text);
 
             // 通信エラーチェック
-            if (request.isError)
+            if (request.isNetworkError)
             {
                 Debug.Log(request.error);
             }
@@ -66,7 +66,7 @@ namespace Presto.Module.Server
             Debug.Log("#######response text:" + request.downloadHandler.text);
 
             // 通信エラーチェック
-            if (request.isError)
+            if (request.isNetworkError)
             {
                 Debug.Log(request.error);
             }

@@ -19,7 +19,7 @@ namespace Presto.UI
         {
             this.MenuData = json_node;
             this.id = this.MenuData["sno"].AsInt;
-            this.TextTitle.text = this.MenuData["title"].ToString().Trim('"');  // TODO なんかダブルクォーテーションがついているので削除
+            this.TextTitle.text = this.MenuData["title"].ToString().Trim('"').Replace("\\\\n", "\n");  // TODO なんかダブルクォーテーションがついているので削除
 
             switch (this.MenuData["type"])
             {
